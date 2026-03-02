@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Admin Dashboard</h1>
+<a href="{% url 'article_add' %}"><b>+ Add New Article</b></a>
+<hr>
+<table border="1" width="100%">
+    <tr>
+        <th>Title</th>
+        <th>Date</th>
+        <th>Actions</th>
+    </tr>
+    {% for article in articles %}
+    <tr>
+        <td>{{ article.title }}</td>
+        <td>{{ article.pub_date }}</td>
+        <td>
+            <a href="{% url 'article_edit' article.id %}">Edit</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>

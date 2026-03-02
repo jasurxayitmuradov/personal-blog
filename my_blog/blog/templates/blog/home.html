@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>My Personal Blog</h1>
+<hr>
+{% for article in articles %}
+    <div>
+        <h2><a href="{% url 'article_detail' article.id %}">{{ article.title }}</a></h2>
+        <p><i>Published on: {{ article.pub_date }}</i></p>
+    </div>
+    <hr>
+{% empty %}
+    <p>No articles found. Go to the Admin panel to add some!</p>
+{% endfor %}
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Maqolani o'chirish</h1>
+<p>Rostdan ham "<strong>{{ article.title }}</strong>" maqolasini o'chirmoqchimisiz?</p>
+
+<form method="POST">
+    {% csrf_token %}
+    <button type="submit" style="background-color: red; color: white;">Ha, o'chirilsin!</button>
+    <a href="{% url 'dashboard' %}">Yo'q, orqaga qaytish</a>
+</form>
+</body>
+</html>

@@ -13,17 +13,19 @@
     <tr>
         <th>Title</th>
         <th>Date</th>
-        <th>Actions</th>
+        <th>Actions</th>    
     </tr>
     {% for article in articles %}
     <tr>
         <td>{{ article.title }}</td>
         <td>{{ article.pub_date }}</td>
         <td>
-            <a href="{% url 'article_edit' article.id %}">Edit</a>
-        </td>
+        <a href="{% url 'article_edit' article.id %}">Edit</a> | 
+        <a href="{% url 'article_delete' article.id %}" style="color: red;">Delete</a>
+    </td>
     </tr>
     {% endfor %}
 </table>
 </body>
 </html>
+
